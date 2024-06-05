@@ -12,9 +12,10 @@ spec:
       labels:
         app: springboot-k8s-mysql
     spec:
-      containers:
-        - name: springboot-crud-k8s
-          image:{{.values.iamgeName}}{{.values.imageTag}}
+  containers:
+    - name: springboot-crud-k8s
+      image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+
 
           imagePullPolicy: IfNotPresent
           ports:
